@@ -1,0 +1,917 @@
+@font-face {
+	font-family: boldcredofont;
+	src: url('ProximaNovaBold.otf');
+}
+
+@font-face {
+	font-family: credofont;
+	src: url('ProximaNovaReg.otf');
+}
+
+canvas,iframe{
+	display:none;
+}
+
+input {
+	display:block; 
+	width: 89%
+}
+
+#loadingindicator{
+	width: 10%;
+	position: absolute;
+	top: 48%;
+	left: 45%;
+	z-index: 301;
+	display:none;
+	min-width:110px;
+}
+
+#loadingicon{
+	background-image:url('../img/spinner.png');
+	background-repeat:no-repeat;
+	background-position: left; 
+	width: 24px;
+	height:24px;
+	background-size: 24px;
+	float:left;
+}
+
+#loadingtext{
+	margin-left: 29px;
+	line-height: 27px;
+}
+
+html, body {
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	width:100%;
+	height:99.8%;
+	margin:0;
+	overflow:hidden;
+	font-family:credofont;
+	color:#474747;
+	font-size: 18px;
+}
+
+header{
+	height:55px;
+	background-color: #FF6319;
+	color:white;	
+	font-size:200%;
+	font-weight:bold;
+	position: relative;
+	z-index:100;
+	background-image:url('../img/credo-logo.png');
+	background-repeat: no-repeat;
+	background-position:3% center; 
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	header{
+		background-size: 77px;
+		background-image:url('../img/credo-logo@2x.png');
+	}
+}
+
+header > div{
+	float:right;
+}
+
+#settings{
+	height:100%;
+	width:48px;
+	background-image:url('../img/icon-settings.png');
+	background-repeat: no-repeat;
+	background-position:3% center; 	
+}
+
+#settings.touched{
+	background-image:url('../img/icon-settingstouched.png');
+}
+
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#settings{
+		background-image:url('../img/icon-settings@2x.png');
+			background-size: 24px;
+	}
+	#settings.touched{
+		background-image:url('../img/icon-settingstouched@2x.png');
+	}
+}
+
+#increasetextsize{
+	height:100%;
+	width:53px;
+	background-image:url('../img/increaseTextsize.png');
+	background-repeat: no-repeat;
+	background-position:3% center; 	
+}
+
+#increasetextsize.touched{
+	background-image:url('../img/increaseTextsizetouched.png');	
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#increasetextsize{
+		background-image:url('../img/increaseTextsize@2x.png');
+		background-size: 24px;
+	}
+	#increasetextsize.touched{
+		background-image:url('../img/increaseTextsizetouched@2x.png');
+	}
+}
+
+#decreasetextsize{
+	height:100%;
+	width:35px;
+	background-image:url('../img/decreaseTextsize.png');
+	background-repeat: no-repeat;
+	background-position:3% center; 	
+}
+
+#decreasetextsize.touched{
+	background-image:url('../img/decreaseTextsizetouched.png');	
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#decreasetextsize{
+		background-image:url('../img/decreaseTextsize@2x.png');
+		background-size: 24px;
+	}
+	#decreasetextsize.touched{
+		background-image:url('../img/decreaseTextsizetouched@2x.png');
+	}
+}
+
+#leftpanel{
+	opacity:0;
+	height:95.8%;
+	float:left;
+	width:196px;
+	padding: 28px 28px 0px 28px;
+}
+
+#leftpanel > img {
+	margin-top:15px;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;	
+}
+
+.disclaimer{
+	font-size: 9px;
+	font-family: credofont;
+	width: 83%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#leftpanel > img:nth-child(2),#leftpanel > img:nth-child(3){
+	margin-top:28px;
+}
+
+#mainArticleimage{
+	height:37%;
+	width:100%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#centerpanel{
+	opacity:0;
+	-webkit-transform:translate3d(0,0,0);
+	width:513px;
+	height:92.5%;
+	float:left;
+}
+
+#wrapper{
+	-webkit-transform:translate3d(0,0,0);
+	height:100%;
+}
+
+#scroller{
+	padding-bottom: 28px;
+	padding-right:28px;
+}
+
+#mainarticleText img, #mainarticleText h1{
+	display:none;
+}
+
+#scroller,#mainarticleTitle,#mainarticleText,#mainarticleText *, #mainarticleTitle *{
+	-webkit-transform:translate3d(0,0,0);
+}
+
+#mainarticleText a{
+	color: #ED572D;
+	text-decoration:none;
+}
+
+#mainarticleText > p:last-of-type{
+	font-size:15px !important;
+}
+
+#wrapper2{
+	-webkit-transform: translate3d(0,0,0);
+	height: 100%;
+	background-image: -webkit-gradient(linear, 0 204, 0 0, color-stop(0.426, #fff), color-stop(0.553, #f7f9f8), color-stop(0.588, #f6f6f8), color-stop(0.588, #f5f7f6), color-stop(0.789, #ececee), color-stop(0.789, #ebedec), color-stop(0.985, #e7e7e9), color-stop(0.99, #e6e8e7), to(#E7E7E9))
+}
+
+#mainarticleTitle{
+	font-family:boldcredofont;
+	font-size: 32px;
+	padding-top:28px;
+	font-size: 200%;
+	margin-bottom:16px;
+	font-weight:bold;
+	line-height: 95%;
+}
+
+#petitionReadsBox{
+	background-color: #f4f4f4;
+	font-size: 12px;
+/* 	font-family: credofont; */
+	font-style:italic;
+	box-sizing: border-box;
+	padding:12px;
+}
+
+#petitionReads, #petitionReads2{
+	font-style:italic;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+
+#petitionReads2{
+	width:90%;
+	padding-bottom: 12px;
+}
+
+#petitionReadsBox > p{
+	margin-top: 0px;
+	margin-bottom: 12px;
+}
+
+#rightpanel{
+	opacity:0;
+	text-align:center;
+	background-color: #E7E7E9;
+	border-color: #CCCCCC;
+	border-style:solid;
+	border-left-width: 1px;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	-webkit-transform:translate3d(0,0,0);
+	position:absolute;
+	width:252px;
+	height:92.65%;
+	right:0px;
+	-webkit-box-shadow: 15px 0px 21px 9px #888;
+	z-index:0;
+}
+
+.myScrollbar{
+	padding-right:5px;
+}
+
+#scroller2, #scroller2 > div, .newAction{
+	-webkit-transform:translate3d(0,0,0);
+}
+
+#rightpanel > #wrapper2 > #scroller2> div {
+	background-image: -webkit-gradient(linear, 0 204, 0 0, color-stop(0.426, #fff), color-stop(0.553, #f7f9f8), color-stop(0.588, #f6f6f8), color-stop(0.588, #f5f7f6), color-stop(0.789, #ececee), color-stop(0.789, #ebedec), color-stop(0.985, #e7e7e9), color-stop(0.99, #e6e8e7), to(#E7E7E9));	
+	border-color: #CCCCCC;
+	border-width: 1px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-style:solid;
+	text-align:left;
+	overflow: hidden;
+	height:195px;
+}
+
+#rightpanel > #wrapper2 > #scroller2 > div:last-child{
+	border-bottom-width: 0px;
+	border-style: solid;
+}
+
+#rightpanel > #wrapper2 > #scroller2 > div > div:nth-child(2){
+	float: left;
+	margin-left: 18px;
+	margin-top: 10px;
+	margin-bottom: 38px;
+	margin-right: 10px;
+	width: 40%;
+	height: 66%;
+	background-size: 100px;
+	background-repeat:no-repeat;
+}
+
+
+.newAction{
+	position:relative;
+	top:10px;
+	background-image: url('../img/icon-new.png');	
+	background-position:right;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	.newAction{
+		background-size: 26px;
+		background-image: url('../img/icon-new@2x.png');	
+	}
+}
+.showme{
+	display:block !important;
+}
+
+.hideme{
+	display:none !important;
+}
+
+
+.submittedAction{
+	position:relative;
+	top:10px;
+	background-image: url('../img/submittedAction.png');	
+	background-position:right;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	.submittedAction{
+		background-size: 26px;
+		background-image: url('../img/submittedAction@2x.png');
+	}
+}
+
+.selectedAction{
+	-webkit-box-shadow:inset 0 0 10px #CCCCCC;
+}
+
+#rightpanel > #wrapper2 > #scroller2 > div > div:first-child{
+	height:24px;
+	width:100%;
+	background-repeat: no-repeat;
+}
+
+#scroller2 > div > img{
+	width: 105px;
+	float:left;
+	margin: 11px;
+	opacity: 0;
+   -webkit-transition: opacity .15s linear;
+}
+
+#rightpanel > #wrapper2 > #scroller2 > div > div:last-child{
+	font-family:boldcredofont;
+	margin-top:9px;
+	margin-right:15px;
+	margin-bottom:5%;
+	margin-left: 127px;
+	font-size:90%;
+	font-weight:bold;
+	color: #3C4858;
+	max-height:145px;
+}
+
+#petition{
+	background-color: white;
+	display:none;
+	width:400px;
+	height:100%;
+	opacity:.98;
+	border-right-width: 15px;
+	position:absolute;
+	z-index: 200;
+	font-size:80%;
+	-webkit-transition: -webkit-transform .15s linear;
+	-webkit-transform: translate3d(-110%, 0%, 0px);
+	-webkit-box-shadow: 0 0 10px #272727;
+	padding-left:28px;
+}
+
+#petition > img:first-child{
+	float:right;
+	padding:15px;
+}
+
+#notificationspinner{
+	display:none;
+}
+
+.spin {
+  -webkit-animation-name: rotateThis;
+  -webkit-animation-duration:1.5s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes rotateThis {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
+} 
+
+#petition > .signpetitiontext{
+	padding-top:30px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #666666;
+}
+
+#submitmypetitionbutton{
+	padding-top:20px;
+}
+#petition > #petionReads{
+	font-weight: bold;
+	padding-right:20px;
+}
+
+#petition > p{
+	font-style: italic;
+}
+
+#whitefade{
+	background-image:url('../img/white-fade.png');
+	background-repeat:repeat-x;
+	position:absolute;
+	bottom:0px;
+	height:40px;
+	width:756px;
+}
+
+#petitionName{
+	text-transform:capitalize;
+	margin-bottom: 5%;
+}
+
+#settingspanel{
+	display:none;
+	width: 333px;
+	height: 522px;
+	opacity: .98;
+	position:absolute;
+	z-index: 200;
+	right: 11px;
+	top: 45px;
+	color:black;
+	font-size:20px;
+	font-weight:bold;
+	background-image:url('../img/settingspanel.png');
+	padding: 30px;
+	padding-top: 79px;
+	box-sizing: border-box;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#settingspanel{
+		background-size: 333px;
+		background-image:url('../img/settingspanel@2x.png');
+	}
+}
+
+#storedsignature{
+	padding-bottom: 15px;
+}
+
+#settingspanel > img:first-child{
+	float:right;
+	padding-right:5px;
+}
+
+#notificationonoff > img {
+	float: right;
+}
+
+#notificationonoff > img:last-child {
+	padding: 7px;
+}
+
+#settingspanel > img{
+	display:block;
+}
+
+#notificationonoff{
+	border-style:solid;
+	border-width:0px 7px 1px 7px;
+	background-color:white;	
+	border-color:black;
+	border-bottom-color: #C1C1C1;
+	min-height:35px;
+	padding:16px 10px 9px 9px;
+}
+
+#notificationonoff > span{
+	float:left;
+	padding-top:2px;
+}
+
+#settingsForm{
+	height: 63%;
+}
+
+#settingsForm > div > span{
+	font-size:12px;
+	font-weight: normal;
+	margin: 12px 0px 9px 0px;
+	float: right;
+	font-weight:bold;
+}
+
+#settingsForm > div > input {
+	display:inline;
+	width:146px;
+	margin: 3px 4px 10px 14px;
+	float:right;
+}
+
+#stateselector > select{
+	margin: 3px 77px 9px 14px;
+	float: right;
+	-webkit-appearance: menulist-button;
+	width:78px;
+}
+
+#updatelist{
+	border-radius: 10px 10px 0px 0px;
+}
+
+#updatelist, #wipealldata, #about, #terms{
+	text-align:center;
+	width:96%;
+	margin-left:2%;
+	min-height:30px;
+	border-width:1px;
+	border-style:solid;
+	border-color: #C1C1C1;
+	display:inline-block;
+	line-height: 32px;
+	font-size: 16px;
+}
+
+#terms{
+	border-top-width:0px;
+	border-radius: 0px 0px 10px 10px;
+	margin-bottom: 16px;
+}
+
+#updatelist:active, #wipealldata:active, #about:active, #terms:active{
+	background-color:black;
+	color:white;
+}
+
+
+#updatelist{
+/* 	margin-top: 15px; */
+	border-bottom-width: 0px !important;
+	border-radius: 5px 5px 0px 0px !important;
+	margin-bottom: 0px !important;
+}
+/*
+
+#updatelist, #wipealldata, #about, #terms {
+	text-align: center;
+	width: 100%;
+	min-height: 35px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #C1C1C1;
+	display: inline-block;
+	line-height: 41px;
+	background-color: white;
+}
+*/
+
+#terms, #about{
+	border-top-width: 0px;
+}
+
+#terms{
+	border-radius:	0px 0px 5px 5px;	
+}
+
+
+
+#facebookpanel{
+	width:49%;
+	opacity:.98;
+	border-width:15px;
+	-webkit-border-image:url('petitionborder.png') 24 24 round;
+	position:absolute;
+	z-index:200;
+	-webkit-transform: translate3d(50%, -125%, 0px);	
+	-webkit-transition: all .25s linear;
+	font-size:80%;	
+}
+
+#blackscreen{
+	display:none;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	position:absolute;
+	z-index: 100;
+	opacity: 0;
+   -webkit-transition: opacity .2s linear;
+}
+
+#facebookpanel > div{
+	border-color: #B8B8B8;
+	border-width:1px;
+	border-style:solid;
+	background-color:white;	
+	padding:5%;
+}
+
+#facebookpanel > div > div {
+	border-color: #B8B8B8;
+	border-width:1px;
+	border-style:solid;
+}
+
+#facebookpanel > div > img:nth-child(1){
+	margin-top:-29px;
+	margin-right:-18px;
+	float:right;
+	-webkit-transition: all .15s linear;
+}
+
+#facebookmessageimage{
+	height: 100px;
+	padding-right:2%;
+	padding-left:5%;
+	float:left;
+	margin-bottom:1%;
+}
+
+#facebookmessagetitle{
+	font-family: boldcredofont;
+	margin-right:2%;
+	margin-left:1%;
+	margin-bottom:1%;
+}
+
+#facebookmessageurl{
+	font-size:85%;
+	color:#736F81;
+	margin-top:1%;
+	margin-bottom:1%;
+	font-weight: 100;
+	overflow: hidden;
+	margin-right: 8px;
+}
+
+#FBMessage{
+	margin-bottom:4%;
+}
+
+#facebookheader{
+	background-image:url('../img/facebooklittle.png');
+	background-repeat:no-repeat;
+	background-position:3% center;
+	min-height:30px;
+	width:100%;
+	background-color:#5A6FA4;
+	margin-bottom:4%;
+}
+
+#facebookheader > div{
+	color:white;
+	padding-top:8.5px;
+	padding-left:32px;
+}
+
+#facebookmessagedescription{
+	width:93%;
+	padding-left:5%;
+	padding-bottom:3%;
+	padding-right:2%;
+	min-height: 105px;
+}
+
+#facebookprofileimg{
+	padding-left:5%;
+	float:left;
+	width: 9%;
+}
+
+textarea{
+	width:80%;
+	border-color:#B0B9CF;
+	margin-left:2%;
+	padding-right:2%;
+}
+
+#facebookfooter{
+	height:34px;
+	width:100%;
+	background-color:#EEEEEE;
+	text-align:center;
+}
+
+#facebookfooter > img{
+	opacity:100;
+	float:right;
+	padding:1%;
+	padding-right:2%;
+	text-align:center;
+}
+
+#emailit, #tweetit{
+	margin-top: 15px;
+}
+
+#fbit{
+	height: 50px;
+	width:100%;
+	background-image:url('../img/facebooksharethislink.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+#fbit.touched{
+	background-image:url('../img/facebooksharethislinktouched.png');
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#fbit{
+		background-size: 179px;
+		background-image:url('../img/facebooksharethislink@2x.png');
+	}
+	#fbit.touched{
+		background-image:url('../img/facebooksharethislinktouched@2x.png');
+	}
+}
+
+#emailit{
+	height: 50px;
+	width:100%;
+	background-image:url('../img/emailit.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+#emailit.touched{
+	background-image:url('../img/emailittouched.png');
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#emailit{
+		background-size: 179px;
+		background-image:url('../img/emailit@2x.png');
+	}
+	#emailit.touched{
+		background-image:url('../img/emailittouched@2x.png');
+	}
+}
+
+#tweetit{
+	height: 50px;
+	width:100%;
+	background-image:url('../img/tweetit.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+#tweetit.touched{
+	background-image:url('../img/tweetittouched.png');
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#tweetit{
+		background-size: 179px;
+		background-image:url('../img/tweetit@2x.png');
+	}
+	#tweetit.touched{
+		background-image:url('../img/tweetittouched@2x.png');
+	}
+}
+
+#sharethispetition{
+	height: 45px;
+	width:100%;
+	background-image:url('../img/sharethispetition.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#sharethispetition{
+		background-size: 179px;
+		background-image:url('../img/sharethispetition@2x.png');
+	}
+}
+
+#signthispetition,#signthispetition2{
+	height: 45px;
+	width: 100%;
+	background-image:url('../img/signthispetition.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+#signthispetition.touched,#signthispetition2.touched{
+	background-image:url('../img/signthispetitiontouched.png');
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#signthispetition,#signthispetition2{
+		background-size: 169px;
+		background-image:url('../img/signthispetition@2x.png');
+	}
+	#signthispetition.touched,#signthispetition2.touched{
+		background-image:url('../img/signthispetitiontouched@2x.png');
+	}
+}
+
+#fbshareit{
+	margin-top: 4.5px;
+	float:right;
+	height: 25px;
+	width: 60px;
+	background-image:url('../img/fbshareit.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+#fbshareit.touched{
+	background-image:url('../img/fbshareittouched.png');
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#fbshareit{
+		background-size: 60px;
+		background-image:url('../img/fbshareit@2x.png');
+	}
+	#fbshareit.touched{
+		background-image:url('../img/fbshareittouched@2x.png');
+	}
+}
+
+#fbcancelit{
+	margin-top: 4.5px;
+	margin-left: 7px;
+	margin-right: 7px;
+	float:right;
+	height: 25px;
+	width: 60px;
+	background-image:url('../img/fbcancelit.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+#fbcancelit.touched{
+	background-image:url('../img/fbcancelittouched.png');
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#fbcancelit{
+		background-size: 60px;
+		background-image:url('../img/fbcancelit@2x.png');
+	}
+	#fbcancelit.touched{
+		background-image:url('../img/fbcancelittouched@2x.png');
+	}
+}
+
+#closeit{
+	float:right;
+	height: 33px;
+	width: 33px;
+	background-image:url('../img/closeit.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#closeit{
+		background-size: 16.5px;
+		background-image:url('../img/closeit@2x.png');
+	}
+}
+
+#submitpetition{
+	height: 33px;
+	width: 144px;
+	background-image:url('../img/submitpetition.png');
+	background-repeat: no-repeat;
+	background-position: center center; 
+}
+
+#submitpetition.touched{
+	background-image:url('../img/submitpetitiontouched.png');
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2){
+	#submitpetition{
+		background-size: 144px;
+		background-image:url('../img/submitpetition@2x.png');
+	}
+	#submitpetition.touched{
+		background-image:url('../img/submitpetitiontouched@2x.png');
+	}
+}

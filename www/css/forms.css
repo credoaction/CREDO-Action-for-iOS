@@ -1,0 +1,34 @@
+select{
+	margin:10px;
+	height:28px;
+}
+
+input{
+	padding:.5%;
+	height:25px;
+	outline-width:0;
+}
+
+input{
+	border-color: #BFBFBF;
+}
+
+input:valid{
+	border-color: #BFBFBF;
+	background-repeat:repeat-y;
+	border-radius: 0px;
+	background-position:right;
+	-webkit-appearance: none;
+	height:25px;
+	outline-width:0;
+}
+
+input:invalid{
+	background-repeat:repeat-y;
+	background-position:right; 
+	border-color:#BFBFBF;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	height:25px;
+	outline-width:0;
+}

@@ -1,0 +1,31 @@
+input{
+	margin-bottom:2%;
+	outline-width:0;
+	border-radius: 20px;
+	border-color:#FF743C;
+	border-style:solid;
+	padding-left:5%;
+	width:93.8%;
+	-webkit-appearance: none;
+	height:30px;
+	margin-top:2%;
+}
+
+select{
+	margin-bottom:2%;
+	outline-width:0;
+	border-radius: 10px;
+	border-color:#FF743C;
+	border-style:solid;
+	padding-left:5%;
+	height:30px;
+	margin-top:2%;
+}
+
+input[name=zip]{
+	width:18%;
+}
+
+input:valid{
+	border-color:#FF743C;
+}
